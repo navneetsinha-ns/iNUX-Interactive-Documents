@@ -39,7 +39,7 @@ with col1:
         x0 = st.slider('Position where the particle enters groundwater  \n$x_0$ (m)',1,400,20,1)
         t_set = st.slider('Time since particle reached the groundwater table  \n$t$ (years)',0,100,20,1)
 with col2:
-    q = st.slider('Infiltration rate (recharge)  \n$q$ (m/year)',0.1,0.4,0.2,0.01)
+    q = st.slider('Infiltration rate (recharge)  \n$q$ (m/year)',0.01,0.4,0.2,0.01)
 
 with col3:
     with st.expander('Aquifer characteristics'):
