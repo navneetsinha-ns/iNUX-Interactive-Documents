@@ -31,14 +31,42 @@ st.set_page_config(page_title="Water Table Fluctuation (WTF) Method")
 # --------- TITLE ---------
 st.title("Groundwater Recharge Estimation")
 st.header('Using the Water Table Fluctuation (WTF) Method', divider = 'blue')
-st.subheader('Theory')
-st.markdown(
-    "Analyze a head time series using falling-limb extrapolation" \
-    " and the WTF recharge estimate (multiple peaks)."
+st.markdown("""
+Groundwater recharge is a key process in groundwater systems and can be estimated using various methods, one of which is the Water Table Fluctuation (WTF) method based on measured groundwater-level data. The WTF method is comparatively easy to apply and requires only groundwater head time series and an estimate of specific yield.
+""")
+
+st.subheader('Theory', divider = 'blue')
+st.markdown("""
+The Water Table Fluctuation (WTF) method estimates groundwater recharge from temporal changes in groundwater levels observed in unconfined aquifers.
+""")
+
+with st.expander(':blue[**Click here**] to show me more about the **theory**'):
+    st.markdown("""
+    The method is based on the assumption that rises in the water table are primarily caused by recharge, while declines reflect drainage and recession processes within the aquifer.
+    
+    Recharge is quantified by relating the water-level rise above a projected recession curve to the specific yield of the aquifer. 
+    
+    $R = S_y \Delta h$
+    
+    The recession curve represents the hypothetical groundwater level evolution in the absence of recharge and is commonly approximated by an exponential function characterized by a recession constant. For each recharge event, the difference between the observed peak level and the extrapolated recession baseline is interpreted as the effective recharge contribution.
+    """)
+    col1 = st.columns((1,3,1))
+    with col1[1]:
+        st.image("FIGS/WTF_USGS.png", caption="Figure 1: Illustration of the WTF approach, from [https://water.usgs.gov/ogw/gwrp/methods/wtf/estimating_graphical.html](https://water.usgs.gov/ogw/gwrp/methods/wtf/estimating_graphical.html)")
+    st.markdown("""
+    The WTF method is straightforward to apply and requires only groundwater head time series and an estimate of specific yield. However, the results depend strongly on the temporal resolution and quality of the data, the definition of recharge events, and the choice of recession parameters. The method is most suitable for shallow, unconfined aquifers with a rapid hydraulic response to recharge and limited influence from pumping or surface-water interactions.
+    
+    More information can be found in [https://water.usgs.gov/ogw/gwrp/methods/wtf/](https://water.usgs.gov/ogw/gwrp/methods/wtf/)
+    """)
+st.subheader('Interactive Plot', divider = 'blue')
+st.markdown("""
+    With the subsequent interactive plot you can select/upload a time series of measured groundwater heads. Then you can process the head time series using falling-limb extrapolation. By defining the specific yield $S_y$ you can calculate the recharge."""
 )
-st.markdown("---")
 
 # --------- INPUT MODE ---------
+
+st.markdown("#### Time Series Data")
+
 mode = st.selectbox(
     "Choose data source:",
     ["Example Series", "Upload CSV"],
@@ -128,8 +156,7 @@ else:
     smooth_head = head_array
 
 # --------- INPUT PARAMETERS ---------
-st.markdown("---")
-st.markdown("### Method Parameters")
+st.markdown("#### Method Parameters")
 col1, col2, col3 = st.columns(3)
 with col1:
     alpha_display = st.container()
@@ -224,7 +251,7 @@ for p_idx in peaks:
 
 
 # --------- PLOTTING ---------
-st.markdown("### 📈 Groundwater Head & Recessions")
+
 fig, ax = plt.subplots(figsize=(10,5))
 if apply_smooth:
     ax.plot(time, smooth_head, color='green', label='Smoothed', linewidth=3)
@@ -264,7 +291,7 @@ ax.set_xlabel('Time'); ax.set_ylabel('Head (m)')
 ax.legend(); st.pyplot(fig)
 
 # --------- SUMMARY ---------
-st.markdown("### 📊 Recharge Events")
+st.markdown("#### Recharge Events")
 if events:
     total_recharge = sum(ev['recharge'] for ev in events)
     for ev in events:
