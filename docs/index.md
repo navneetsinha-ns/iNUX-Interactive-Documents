@@ -18,21 +18,6 @@ These resources are intended to support educators and learners in understanding,
 All materials are freely available under the CC-BY-SA 4.0 open-source license. <img src="./assets/images/CC_BY-SA_icon.png"
      alt="CC BY-SA 4.0 license"
      style="height:1.6rem; vertical-align:middle; margin-left:0.4rem;">
-	 
-<table style="width:100%; border-collapse:collapse; border:none; margin-top:2rem;">
-  <tr>
-    <td style="width:220px; border:none; vertical-align:middle; padding:0;">
-      <img src="./assets/images/EN_Co-fundedbytheEU_RGB_Monochrome.png"
-           alt="Co-funded by the European Union"
-           style="max-width:200px; height:auto;">
-    </td>
-    <td style="border:none; vertical-align:middle; padding-left:1rem; font-size:0.95rem; line-height:1.35;">
-      This project is co-funded by the European Union. However, the views and opinions expressed are solely those of the author(s) and do not necessarily reflect those of the European Union or the National Agency DAAD. Neither the European Union nor the granting authority can be held responsible for them.
-    </td>
-  </tr>
-</table>
-
----
 
 ## 🚀 Access to Resources
 
@@ -148,4 +133,18 @@ An **advanced interactive evaluation tool** for slug test analysis with extended
 </a>
 </p>
 
+---
+
+<table style="width:100%; border-collapse:collapse; border:none; margin-top:2rem;">
+  <tr>
+    <td style="width:220px; border:none; vertical-align:middle; padding:0;">
+      <img src="./assets/images/EN_Co-fundedbytheEU_RGB_Monochrome.png"
+           alt="Co-funded by the European Union"
+           style="max-width:200px; height:auto;">
+    </td>
+    <td style="border:none; vertical-align:middle; padding-left:1rem; font-size:0.95rem; line-height:1.35;">
+      This project is co-funded by the European Union. However, the views and opinions expressed are solely those of the author(s) and do not necessarily reflect those of the European Union or the National Agency DAAD. Neither the European Union nor the granting authority can be held responsible for them.
+    </td>
+  </tr>
+</table>
 
