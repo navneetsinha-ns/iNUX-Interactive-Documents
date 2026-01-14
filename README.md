@@ -1,5 +1,7 @@
 # iNUX Interactive Documents
 
+👉 **[Quick Access and Overview](https://gw-inux.github.io/iNUX-Interactive-Documents)**
+
 This repository hosts the **interactive digital learning materials** developed within the iNUX project. The materials are designed to support teaching and learning in hydrogeology, groundwater hydrology, and related fields through interactive, open-source resources.
 
 The repository includes:
@@ -9,7 +11,7 @@ The repository includes:
 
 The interactive documents are intended for use in **self-learning, classroom teaching, online courses, and professional training**, and are continuously extended and refined.
 
-## Interactive Documents Web Catalog
+### Interactive Documents Web Catalog
 
 For an overview of all available interactive documents, including search and navigation functionality, please refer to the **iNUX Web Catalog**:
 
@@ -22,7 +24,7 @@ The catalog provides:
 
 It represents the recommended entry point for exploring and accessing the interactive documents hosted in this repository.
 
-## Organization and Structure
+### Organization and Structure
 
 The repository is organized according to the **iNUX categorization framework**, which provides a consistent thematic structure aligned with standard hydrogeology curricula and commonly used textbook concepts.
 
@@ -35,12 +37,14 @@ The full description of the categorization concept is documented in the iNUX Han
 
 👉 **[Link to the Categorization Report in the iNUX Handbook](PLACEHOLDER_URL)**
 
-## Contributions and Reuse
+### Contributions and Reuse
 
 All materials are developed using open-source tools and are intended to support reuse, adaptation, and further development in educational and professional contexts. Contributions and feedback are welcome.
 
-## Funding Information
+### Acknowledgment
 
 This repository was created within the ERASMUS+ project **iNUX**.
+
+![Co-funded by the European Union](FIGS/eu-funded.jpg)
 
 *This project is co-funded by the European Union. However, the views and opinions expressed are solely those of the author(s) and do not necessarily reflect those of the European Union or the National Agency DAAD. Neither the European Union nor the granting authority can be held responsible for them.*
