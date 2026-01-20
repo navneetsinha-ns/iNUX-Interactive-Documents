@@ -1,0 +1,51 @@
+catalog_category: 08 Groundwater Modeling
+catalog_subcategory: 08-02 Numerical Schemes
+catalog_subsubcategory: (Attach to subcategory)
+
+# --- RESOURCE IDENTIFICATION AND TOPIC MAPPING ---
+# item_id: A unique, simple slug for this item (e.g., aquifer_test_1). 
+
+item_id: 080200002
+topic_page_id: 080200_en  # Stable mapping key (preferred)
+topic: 08-02 Numerical Schemes # Human-readable topic label (fallback mapping)
+title: 'Finite-Difference Numerical scheme: Solver options'
+
+# --- TYPE AND ACCESS ---
+resource_type: Streamlit app            # Required. Options: Streamlit app, Jupyter Notebook, Video, Dataset, Other.
+url: https://gwf-1d-conf-fd-solvers.streamlit.app/      # The direct link to launch the app, notebook on Binder, or video on YouTube.
+date_released: TO_BE_FILLED_BY_COURSE_MANAGER               # Release date in YYYY-MM-DD format.
+
+# --- CONTENT AND METADATA ---
+description_short: |
+  This app illustrates the numerical solution of the 1D groundwater flow equation for a confined aquifer using a finite-difference scheme. Users can interactively compare Jacobi, Gauss–Seidel, and SOR solvers, visualize the iterative path toward convergence, and evaluate results against the analytical solution. The tool supports conceptual understanding of solver behavior, convergence characteristics, and numerical accuracy in groundwater modeling.
+keywords: [1D flow, finite differences, solver, solution schemes, SOR, Gauss-Seidel, Jacobi]
+multipage_app: false
+num_pages: 0
+interactive_plots: true
+num_interactive_plots: 1
+assessments_included: false
+num_assessment_questions: 0
+videos_included: false
+num_videos: 0
+
+# --- EDUCATIONAL FIT ---
+time_required: "15\u201330 minutes"             # Estimated time for a student to complete the activity (e.g., 30 minutes, 1.5 hours).
+prerequisites: Basic hydrogeology, groundwater flow equation       # Required prior knowledge (e.g., Darcy's Law, Python basics, basic calculus).
+fit_for:
+  - self learning
+  - classroom teaching
+  - online teaching
+
+# --- AUTHOR AND REFERENCE ---
+authors:
+  - name: Thomas Reimann
+    affiliation: TU Dresden
+references: []                            # List any published papers, DOIs, or source materials related to this resource.
+# image_url: Optional path to a screenshot for the catalog page (e.g., /assets/images/resources/flow_tool_screenshot.png)
+
+figures:
+  - id: 1
+    original_filename: 08_02_FD_Solver.png
+    type: Screenshot
+    caption: The interactive plot shows the development of the solution. Various solver options
+    is_cover: true
