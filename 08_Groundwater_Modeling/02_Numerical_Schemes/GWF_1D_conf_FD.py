@@ -1,6 +1,7 @@
 # Necessary libraries
 import matplotlib.pyplot as plt
 import matplotlib.animation
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 from numpy import nan as NaN
 from IPython.display import display
@@ -101,6 +102,7 @@ RA = RCH_IN/1000/24/3600/365.25
 h[0]  = BC_L
 h[-1] = BC_R
 st.session_state.h_old = h.copy()
+st.session_state.h_ini = h.copy()
         
 # Maximaler / Minimaler Anfangswasserstand für Skalierung der Abbildung
 h_max = max(h)
@@ -124,6 +126,7 @@ out_txt = '\n'.join((
                          r'$eps = %.4f$' % (st.session_state.epsilon, )))   
 fig = plt.figure(figsize=(10,7))
 ax1 = fig.add_subplot(1, 1, 1)
+ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 ax2 = ax1.twiny() 
 ax1.plot(h, '--o')
 plt.ylim(h_min-h_range,ymax)
@@ -151,7 +154,11 @@ def computation():
     
     i = 0
     convergence = False
+    
     if run:
+        h = st.session_state.h_ini.copy()
+        st.session_state.h_old = h.copy()
+        
         while i < st.session_state.i_max:
             # Increase iteration count
             i = i + 1       
@@ -178,6 +185,7 @@ def computation():
                                      r'$dh_{max} = %.4f$' % (max_head_change, )))   
             fig = plt.figure(figsize=(10,7))
             ax1 = fig.add_subplot(1, 1, 1)
+            ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
             ax2 = ax1.twiny()
             ax1.set_xlabel('Index cells (starting with 0)', fontsize=14)  
             ax2.set_xlabel('Distance in m', fontsize=14)             
