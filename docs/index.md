@@ -133,6 +133,8 @@ An **advanced interactive evaluation tool** for slug test analysis with extended
 </a>
 </p>
 
+---
+
 <!-- EU_FUNDING_FOOTER -->
 <hr style="margin:0.4rem 0;">
 
