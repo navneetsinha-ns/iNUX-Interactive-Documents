@@ -1,6 +1,7 @@
 # Necessary libraries
 import matplotlib.pyplot as plt
 import matplotlib.animation
+from matplotlib.ticker import MaxNLocator
 import numpy as np
 from numpy import nan as NaN
 from IPython.display import display
@@ -9,6 +10,7 @@ from IPython.display import clear_output
 import math
 import streamlit as st
 from streamlit_extras.stateful_button import button
+
 
 # also Interactive Documents 08-02-002
 # ToDo:
@@ -75,7 +77,7 @@ with column[0]:
         container.write("**Hydraulic conductivity** in m/s: %5.2e" %K)
 with column[1]:
     with st.expander('**Spatial discretization**'):
-        cells   = st.number_input('Number of cells', 3, 100, 11, 1)
+        cells   = st.number_input('Number of cells', 3, 101, 11, 1)
         dx      = st.number_input('Spatial increment dx (in m)',1,1000,500,1) 
 with column[2]:
     with st.expander('**Parameter for the numerical solution**'):  
@@ -144,6 +146,7 @@ out_txt = '\n'.join((
                          r'$eps = %.4f$' % (st.session_state.epsilon, )))   
 fig = plt.figure(figsize=(10,7))
 ax1 = fig.add_subplot(1, 1, 1)
+ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 ax2 = ax1.twiny() 
 ax1.plot(h, '--o')
 plt.ylim(h_min-h_range,ymax)
@@ -219,6 +222,7 @@ def computation():
                                      r'$dh_{max} = %.4f$' % (max_head_change, )))   
             fig = plt.figure(figsize=(10,7))
             ax1 = fig.add_subplot(1, 1, 1)
+            ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
             ax2 = ax1.twiny()
             ax1.set_xlabel('Index cells (starting with 0)', fontsize=14)  
             ax2.set_xlabel('Distance in m', fontsize=14)             
